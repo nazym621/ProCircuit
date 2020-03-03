@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Aggregate_Credit>
+
+<h2>Aggregate_Credit</h2>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Event_ID</th>
+        <th>Result_ID</th>
+        <th>Tournament_ID</th>
+        <th>Winnings</th>
+    </tr>
+
+    @foreach (var credit in Model)
+    {
+        <tr>
+            <td><a href=/Credit/ViewCredit/@credit.Credit_ID>@credit.Credit_ID</a></td>
+            <td>@credit.Credit_ID</td>
+            <td>@credit.Event_ID</td>
+            <td>@credit.Result_ID</td>
+            <td>@credit.Tournament_ID</td>
+        </tr>
+
+    }
+</table>
+
+
