@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Final Project", "Final Project\Final Project.csproj", "{E461EB47-E879-4F06-8B37-43C583186013}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProCircuit", "Final Project\ProCircuit.csproj", "{E461EB47-E879-4F06-8B37-43C583186013}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -9,5 +9,7 @@ namespace Final_Project
     public interface ICircuitRepository
     {
         public IEnumerable<Aggregate_Credit> GetAllCredit();
+        public Aggregate_Credit GetCredit(int id);
+        public void UpdateCredit(Aggregate_Credit Aggregate_Credit);
     }
 }

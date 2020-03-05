@@ -1,0 +1,21 @@
+﻿@model Aggregate_Credit
+
+<h2>Update @Model.Tournament_ID</h2>
+
+@using (Html.BeginForm("UpdateCreditToDatabase", "Credit", "Post"))
+{
+    <input asp-for="Tournament_ID" type="hidden" value="@Model.Tournament_ID" />
+
+    <label asp-for="Tournament_ID" class="control-label">Name</label>
+
+    <input type="text" name="Name" class="form-control" value="@Model.Tournament_ID" />
+
+    <label asp-for="Event_ID" class="control-label">Event</label>
+
+    <input type="number" step="0.01" name="Price" class="form-control" value="@Model.Event_ID" />
+
+    <input type="submit" value="Update Credit" class="btn btn-primary" />
+
+}
+
+

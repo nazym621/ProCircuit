@@ -1,0 +1,27 @@
+﻿@model Aggregate_Credit
+
+<h3>@Model.Credit_ID Information</h3>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Event_ID</th>
+        <th>Result_ID</th>
+        <th>Tournament_ID</th>
+        <th>Winnings</th>
+    </tr>
+    <tr>
+        <td>@Model.Credit_ID</td>
+        <td>@Model.Event_ID</td>
+        <td>@Model.Result_ID</td>
+        <td>@Model.Tournament_ID</td>
+    </tr>
+
+</table>
+
+<div style="display: block">
+    <a href="/Credit/UpdateProduct/@Model.Tournament_ID">Update this Credit</a>
+</div>
+
+
+
