@@ -1,6 +1,6 @@
 using System;
 
-namespace Final_Project.Models
+namespace ProCircuit.Models
 {
     public class ErrorViewModel
     {

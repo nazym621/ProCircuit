@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Final_Project</RootNamespace>
+    <RootNamespace>ProCircuit</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

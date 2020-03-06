@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MySql.Data.MySqlClient;
 
-namespace Final_Project
+namespace ProCircuit
 {
     public class Startup
     {

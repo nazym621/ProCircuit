@@ -1,12 +1,12 @@
 ﻿using Dapper;
-using Final_Project.Models;
+using ProCircuit.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Final_Project
+namespace ProCircuit
 {
     public class CircuitRepository : ICircuitRepository
     {
@@ -35,7 +35,8 @@ namespace Final_Project
         }
 
 
+       
 
-
+        
     }
 }

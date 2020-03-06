@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Final_Project.Models;
+using ProCircuit.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Final_Project.Controllers
+namespace ProCircuit.Controllers
 {
     public class CreditController : Controller
     {

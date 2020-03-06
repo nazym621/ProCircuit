@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Final_Project.Models;
+using ProCircuit.Models;
 
-namespace Final_Project.Controllers
+namespace ProCircuit.Controllers
 {
     public class HomeController : Controller
     {
