@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using Testing.Models;
 
 namespace ProCircuit
 {
@@ -34,9 +35,30 @@ namespace ProCircuit
                 new { id = aggregate_Credit.Tournament_ID, result = aggregate_Credit.Result_ID, winnings = aggregate_Credit.Winnings });
         }
 
+        public void InsertCredit(Aggregate_Credit creditToInsert)
+        {
+            _conn.Execute("INSERT INTO aggregatecredit (EVENT_ID, TOURNAMENT_ID, RESULT_ID, WINNINGS) VALUES (@eventid, @tournamentid, @resultid, winnings);",
+                new { eventid = creditToInsert.Event_ID, tournament = creditToInsert.Tournament_ID, result = creditToInsert.Result_ID, winnings = creditToInsert.Winnings });
+        }
 
-       
+        public IEnumerable<Category> GetCategories()
+        {
+            return _conn.Query<Category>("SELECT * FROM categories;");
+        }
 
-        
+        public Aggregate_Credit AssignCategory()
+        {
+            var categoryList = GetCategories();
+            var credit = new Aggregate_Credit();
+            credit.Categories = categoryList;
+
+            return credit;
+        }
+
+
+
+
+
+
     }
 }

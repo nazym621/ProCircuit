@@ -44,6 +44,22 @@ namespace ProCircuit.Controllers
             return RedirectToAction("ViewCredit", new { id = aggregate_Credit.Tournament_ID });
         }
 
+        public IActionResult InsertCredit()
+        {
+            var cred = repo.AssignCategory();
+
+            return View(cred);
+        }
+
+        public IActionResult InsertCreditToDatabase(Aggregate_Credit creditToInsert)
+        {
+            repo.InsertCredit(creditToInsert);
+
+            return RedirectToAction("Index");
+        }
+
+
+
 
 
 
