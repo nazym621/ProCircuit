@@ -31,34 +31,50 @@ namespace ProCircuit
 
         public void UpdateCredit(Aggregate_Credit aggregate_Credit)
         {
-            _conn.Execute("UPDATE Aggregate_Credit SET N = @name, Price = @price WHERE ProductID = @id",
+            _conn.Execute("UPDATE aggregate_credit SET event_id = @event, tournament = @tournamentid WHERE CreditID = @id",
                 new { id = aggregate_Credit.Tournament_ID, result = aggregate_Credit.Result_ID, winnings = aggregate_Credit.Winnings });
         }
 
         public void InsertCredit(Aggregate_Credit creditToInsert)
         {
-            _conn.Execute("INSERT INTO aggregatecredit (EVENT_ID, TOURNAMENT_ID, RESULT_ID, WINNINGS) VALUES (@eventid, @tournamentid, @resultid, winnings);",
+            _conn.Execute("INSERT INTO aggregate_credit (EVENT_ID, TOURNAMENT_ID, RESULT_ID, WINNINGS) VALUES (@eventid, @tournamentid, @resultid, winnings);",
                 new { eventid = creditToInsert.Event_ID, tournament = creditToInsert.Tournament_ID, result = creditToInsert.Result_ID, winnings = creditToInsert.Winnings });
         }
 
-        public IEnumerable<Category> GetCategories()
+        public void InsertExpenses(Expenses expensesToInsert)
         {
-            return _conn.Query<Category>("SELECT * FROM categories;");
+            _conn.Execute("INSERT INTO expenses (FLIGHT, TRANSPORTATION, FOOD, HOTEL, TOTALEXPENSES) VALUES (@flight, @transportation, @food, @hotel, @totalexpenses);",
+                new { flight = expensesToInsert.Flight, transportation = expensesToInsert.Transportation, food = expensesToInsert.Food, hotel = expensesToInsert.Hotel, totalexpenses = expensesToInsert.TotalExpenses });
         }
 
-        public Aggregate_Credit AssignCategory()
+        public IEnumerable<Expenses> GetExpenses()
         {
-            var categoryList = GetCategories();
-            var credit = new Aggregate_Credit();
-            credit.Categories = categoryList;
-
-            return credit;
+            return _conn.Query<Expenses>("SELECT * FROM expenses;");
         }
 
+        public Aggregate_Credit AssignExpenses()
+        {
+            var expensesList = GetExpenses();
+            var cred = new Aggregate_Credit();
+            cred.Expenses = expensesList;
 
+            return cred ;
+        }
 
+        public IEnumerable<Tournament> GetTournament()
+        {
+            return _conn.Query<Tournament>("SELECT * FROM tournament;");
+        }
 
+        public Aggregate_Credit AssignTournament()
+        {
+            var tournamentList = GetTournament();
+            var cred = new Aggregate_Credit();
+            cred.TournamentName = tournamentList;
 
+            return cred;
+        }
 
+        
     }
 }

@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Product>
+
+<h2>Tournaments</h2>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Total_Prize</th>
+    </tr>
+
+    @foreach (var tournament in Model)
+    {
+        <tr>
+            <td><a href=/Tournament/ViewTournament/@tournament.TournamentID>@tournament.TournamentID</a></td>
+            <td>@tournament.Name</td>
+            <td>@tournament.Total_Prize</td>
+        </tr>
+
+    }
+</table>
+
+

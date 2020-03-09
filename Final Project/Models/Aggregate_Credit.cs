@@ -13,6 +13,8 @@ namespace ProCircuit.Models
         public int Result_ID { get; set; }
         public int Tournament_ID { get; set; }
         public int Winnings { get; set; }
-        public IEnumerable<Category> Categories { get; set; }
+        public IEnumerable<Tournament> TournamentName { get; set; }
+        public IEnumerable<Expenses> Expenses { get; set; }
+
     }
 }

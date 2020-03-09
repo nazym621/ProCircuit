@@ -34,6 +34,9 @@ namespace ProCircuit
 
             services.AddTransient<ICircuitRepository, CircuitRepository>();
 
+            services.AddTransient<ITournamentRepository, TournamentRepository>();
+
+
 
             services.AddControllersWithViews();
         }
