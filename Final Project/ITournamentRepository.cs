@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProCircuit.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,5 +11,11 @@ namespace ProCircuit
     {
         public IEnumerable<Tournament> GetAllTournaments();
         public Tournament GetTournament(string type);
+        public void UpdateTournament(Tournament tournament);
+        public void InsertTournament(Tournament tournamentToInsert);
+        public IEnumerable<Aggregate_Credit> GetAllCredit();
+        public Aggregate_Credit AssignAggregateCredit();
+
+
     }
 }

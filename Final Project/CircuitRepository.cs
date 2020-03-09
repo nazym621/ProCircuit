@@ -61,19 +61,9 @@ namespace ProCircuit
             return cred ;
         }
 
-        public IEnumerable<Tournament> GetTournament()
-        {
-            return _conn.Query<Tournament>("SELECT * FROM tournament;");
-        }
+       
 
-        public Aggregate_Credit AssignTournament()
-        {
-            var tournamentList = GetTournament();
-            var cred = new Aggregate_Credit();
-            cred.TournamentName = tournamentList;
-
-            return cred;
-        }
+        
 
         
     }

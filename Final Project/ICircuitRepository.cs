@@ -14,8 +14,6 @@ namespace ProCircuit
         public void UpdateCredit(Aggregate_Credit Aggregate_Credit);
         public void InsertCredit(Aggregate_Credit creditToInsert);
         public void InsertTournament(Tournament tournamentToInsert);
-        public IEnumerable<Tournament> GetTournament();
-        public Tournament AssignTournament();
         public void InsertExpenses(Expenses expensesToInsert);
         public IEnumerable<Expenses> GetExpenses();
         public Expenses AssignExpenses();

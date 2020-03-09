@@ -46,6 +46,14 @@ namespace ProCircuit.Controllers
             return View(tourney);
         }
 
+        public IActionResult UpdateTournamentToDatabase(Tournament tournament)
+        {
+            repo.UpdateTournament(tournament);
+
+            return RedirectToAction("ViewTournament", new { id = tournament.TournamentID });
+        }
+
+
 
 
     }

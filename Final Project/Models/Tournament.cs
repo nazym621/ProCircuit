@@ -5,6 +5,8 @@ namespace Testing.Models
 {
     public class Tournament
     {
+        internal object TotalPrize;
+
         public int TournamentID { get; set; }
         public string Name { get; set; }
        
