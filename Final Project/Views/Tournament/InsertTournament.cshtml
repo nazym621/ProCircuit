@@ -1,0 +1,22 @@
+﻿@model Tournament
+<h2>Create a New Tournament</h2>
+@using (Html.BeginForm("InsertTournamentToDatabase", "Tournament", "Post"))
+{
+    <input asp-for="TournamentID" type="hidden" value="" />
+    <label asp-for="Name" class="control-label">Name</label>
+    <input type="text" name="Name" class="form-control" value="" />
+    <label asp-for="Total_Prize" class="control-label">Total_Prize</label>
+    <input type="number" step="0.01" name="Total_Prize" class="form-control" />
+    <div class="form-group">
+        <label for="">Select a AggregateCredit</label>
+        <select class="form-control" name="CreditID" value="">
+            @foreach (var cat in Model.AggregateCredit)
+            {
+                <option value="@cat.CreditID">@cat.CreditID @cat.Name</option>
+            }
+        </select>
+    </div>
+    <input type="submit" value="Create Tournament" class="btn btn-primary" />
+}
+
+

@@ -53,6 +53,22 @@ namespace ProCircuit.Controllers
             return RedirectToAction("ViewTournament", new { id = tournament.TournamentID });
         }
 
+        public IActionResult InsertTournament()
+        {
+            var tourney = repo.AssignAggregateCredit();
+
+            return View(tourney);
+        }
+
+        public IActionResult InsertTournamentToDatabase(Tournament tournamentToInsert)
+        {
+            repo.InsertTournament(tournamentToInsert);
+
+            return RedirectToAction("Index");
+        }
+
+
+
 
 
 
