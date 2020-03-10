@@ -1,0 +1,28 @@
+﻿@model Expenses
+
+<h3>@Model.TotalExpenses Information</h3>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Flight</th>
+        <th>Transportation</th>
+        <th>Food</th>
+        <th>Hotel</th>
+        <th>Total Expenses</th>
+    </tr>
+    <tr>
+        <td>@Model.Flight</td>
+        <td>@Model.Transportation</td>
+        <td>@Model.Food</td>
+        <td>@Model.Hotel</td>
+        <td>@Model.TotalExpenses</td>
+    </tr>
+
+</table>
+
+<div style="display: block">
+    <a href="/Expenses/UpdateExpenses/@Model.TotalExpenses">Update this Expenses</a>
+</div>
+
+

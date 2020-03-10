@@ -32,23 +32,23 @@ namespace ProCircuit
         public void UpdateTournament(Tournament tournament)
         {
             _conn.Execute("UPDATE tournament SET Name = @name, Total_Prize = @totalprize WHERE TournamentID = @id",
-                new { name = tournament.Name, money = tournament.TotalPrize, id = tournament.TournamentID });
+                new { name = tournament.Name, money = tournament.Total_Prize, id = tournament.TournamentID });
         }
 
-        public void InsertCredit(Aggregate_Credit creditToInsert)
+        public void InsertTournament(Tournament tournamentToInsert)
         {
-            _conn.Execute("INSERT INTO Aggregate_Credit (ID, Event_ID, Result_ID, Tournament_ID, Winnings) VALUES (@id, @eventid, @resultid, tournamentid, winnings);",
-                new { eventid = creditToInsert.Event_ID, result = creditToInsert.Result_ID, tournament = creditToInsert.Tournament_ID, winnings = creditToInsert.Winnings });
+            _conn.Execute("INSERT INTO Tournament (ID, Name, Total_Prize) VALUES (@id, @name, @totalprize);",
+                new { id = tournamentToInsert.TournamentID, name = tournamentToInsert.Name, totalprize = tournamentToInsert.Total_Prize, });
         }
 
-        public IEnumerable<Aggregate_Credit> GetCredit()
+        public IEnumerable<Aggregate_Credit> GetAllCredit()
         {
             return _conn.Query<Aggregate_Credit>("SELECT * FROM aggregate_credit;");
         }
 
-        public Aggregate_Credit AssignAggregateCredit()
+        public Tournament AssignAggregateCredit()
         {
-            var creditList = GetCredit();
+            var creditList = GetAllCredit();
             var tourney = new Tournament();
             tourney.AggregateCredit = creditList;
 

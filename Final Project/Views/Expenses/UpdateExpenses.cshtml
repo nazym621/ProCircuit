@@ -1,0 +1,29 @@
+﻿@model Expenses
+
+<h2>Update @Model.TotalExpenses</h2>
+
+@using (Html.BeginForm("UpdateExpensesToDatabase", "Expenses", "Post"))
+{
+    <input asp-for="TotalExpenses" type="hidden" value="@Model.TotalExpenses" />
+
+    <label asp-for="Flight" class="control-label">Flight</label>
+
+    <input type="text" name="Flight" class="form-control" value="@Model.Flight" />
+
+    <label asp-for="Transportation" class="control-label">Transportation</label>
+
+    <input type="number" step="0.01" name="Transportation" class="form-control" value="@Model.Transportation" />
+
+    <label asp-for="Food" class="control-label">Food</label>
+
+    <input type="text" name="Food" class="form-control" value="@Model.Food" />
+
+    <label asp-for="Hotel" class="control-label">Hotel</label>
+
+    <input type="number" step="0.01" name="Hotel" class="form-control" value="@Model.Hotel" />
+
+    <input type="submit" value="Update Product" class="btn btn-primary" />
+
+}
+
+
