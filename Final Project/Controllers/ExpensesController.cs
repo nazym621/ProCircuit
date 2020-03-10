@@ -55,6 +55,7 @@ namespace ProCircuit.Controllers
         public IActionResult InsertExpenses()
         {
             var cost = repo.AssignAggregateCredit();
+            cost.Tournament = repo.GetTournament();
 
             return View(cost);
         }

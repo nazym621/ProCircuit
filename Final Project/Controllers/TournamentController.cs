@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Testing.Models;
+using ProCircuit.Models;
 
 namespace ProCircuit.Controllers
 {
@@ -17,7 +17,6 @@ namespace ProCircuit.Controllers
             this.repo = repo;
         }
 
-        // GET: /<controller>/
         public IActionResult Index()
         {
             var tourney = repo.GetAllTournaments();
@@ -25,16 +24,16 @@ namespace ProCircuit.Controllers
             return View(tourney);
         }
 
-        public IActionResult ViewTournament(string type)
+        public IActionResult ViewTournament(string name)
         {
-            var tourney = repo.GetTournament(type);
+            var tourney = repo.GetTournament(name);
 
             return View(tourney);
         }
 
-        public IActionResult UpdateTournament(string type)
+        public IActionResult UpdateTournament(string name)
         {
-            Tournament tourney = repo.GetTournament(type);
+            Tournament tourney = repo.GetTournament(name);
 
             repo.UpdateTournament(tourney);
 
@@ -50,7 +49,7 @@ namespace ProCircuit.Controllers
         {
             repo.UpdateTournament(tournament);
 
-            return RedirectToAction("ViewTournament", new { id = tournament.TournamentID });
+            return RedirectToAction("ViewTournament", new { name = tournament.Name });
         }
 
         public IActionResult InsertTournament()

@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Testing.Models;
 
 namespace ProCircuit
 {
@@ -13,10 +12,6 @@ namespace ProCircuit
         public Aggregate_Credit GetCredit(int id);
         public void UpdateCredit(Aggregate_Credit Aggregate_Credit);
         public void InsertCredit(Aggregate_Credit creditToInsert);
-        public void InsertExpenses(Expenses expensesToInsert);
-        public IEnumerable<Expenses> GetExpenses();
-        public Expenses AssignExpenses();
-
-
+      
     }
 }

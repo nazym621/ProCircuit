@@ -41,8 +41,24 @@ namespace ProCircuit
 
         }
 
+        public IEnumerable<Aggregate_Credit> GetAllCredit()
+        {
+            return _conn.Query<Aggregate_Credit>("SELECT * FROM aggregate_credit;");
+        }
 
+        public Expenses AssignAggregateCredit()
+        {
+            var creditList = GetAllCredit();
+            var cost = new Expenses();
+            cost.AggregateCredit = creditList;
 
+            return cost;
+        }
+
+        public IEnumerable<Tournament> GetTournament()
+        {
+            return _conn.Query<Tournament>("SELECT * FROM TOURNAMENTS;");
+        }
 
     }
 }

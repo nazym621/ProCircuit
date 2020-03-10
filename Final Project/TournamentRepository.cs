@@ -5,11 +5,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
-using Testing.Models;
 
 namespace ProCircuit
 {
-    public class TournamentRepository: ITournamentRepository
+    public class TournamentRepository : ITournamentRepository
     {
         private readonly IDbConnection _conn;
 
@@ -23,10 +22,10 @@ namespace ProCircuit
             return _conn.Query<Tournament>("SELECT * FROM TOURNAMENTS;");
         }
 
-        public Tournament GetTournament(string type)
+        public Tournament GetTournament(string name)
         {
-            return (Tournament)_conn.QuerySingle<Tournament>("SELECT * FROM Tournament WHERE TournamentType = @type",
-                new { type = type });
+            return (Tournament)_conn.QuerySingle<Tournament>("SELECT * FROM Tournament WHERE TournamentName = @name",
+                new { name = name });
         }
 
         public void UpdateTournament(Tournament tournament)

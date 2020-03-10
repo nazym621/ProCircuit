@@ -44,12 +44,6 @@ namespace ProCircuit.Controllers
             return RedirectToAction("ViewCredit", new { id = aggregate_Credit.Tournament_ID });
         }
 
-        public IActionResult InsertTournament()
-        {
-            var tourney = repo.AssignTournament();
-
-            return View(tourney);
-        }
 
         public IActionResult InsertCreditToDatabase(Aggregate_Credit creditToInsert)
         {
@@ -58,19 +52,7 @@ namespace ProCircuit.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult InsertExpenses()
-        {
-            var charge = repo.AssignExpenses();
-
-            return View(charge);
-        }
-
-        public IActionResult InsertExpensestToDatabase(Expenses expensesToInsert)
-        {
-            repo.InsertExpenses(expensesToInsert);
-
-            return RedirectToAction("Index");
-        }
+        
 
 
 

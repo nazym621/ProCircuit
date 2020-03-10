@@ -10,7 +10,7 @@
     <div class="form-group">
         <label for="">Select a Tournament</label>
         <select class="form-control" name="Tournament_ID" value="">
-            @foreach (var cat in Model.TournamentName)
+            @foreach (var cat in Model.Tournament)
             {
                 <option value="@cat.TournamentID">@cat.TournamentID @cat.Name</option>
             }
