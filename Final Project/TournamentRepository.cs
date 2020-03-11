@@ -19,7 +19,7 @@ namespace ProCircuit
 
         public IEnumerable<Tournament> GetAllTournaments()
         {
-            return _conn.Query<Tournament>("SELECT * FROM TOURNAMENTS;");
+            return _conn.Query<Tournament>("SELECT * FROM TOURNAMENT;");
         }
 
         public Tournament GetTournament(string name)
@@ -31,18 +31,18 @@ namespace ProCircuit
         public void UpdateTournament(Tournament tournament)
         {
             _conn.Execute("UPDATE tournament SET Name = @name, Total_Prize = @totalprize WHERE TournamentID = @id",
-                new { name = tournament.Name, money = tournament.Total_Prize, id = tournament.TournamentID });
+                new { name = tournament.Name, money = tournament.Total_Prize, id = tournament.Tournament_ID });
         }
 
         public void InsertTournament(Tournament tournamentToInsert)
         {
             _conn.Execute("INSERT INTO Tournament (ID, Name, Total_Prize) VALUES (@id, @name, @totalprize);",
-                new { id = tournamentToInsert.TournamentID, name = tournamentToInsert.Name, totalprize = tournamentToInsert.Total_Prize, });
+                new { id = tournamentToInsert.Tournament_ID, name = tournamentToInsert.Name, totalprize = tournamentToInsert.Total_Prize, });
         }
 
-        public IEnumerable<Aggregate_Credit> GetAllCredit()
+        public IEnumerable<CircuitTournaments> GetAllCredit()
         {
-            return _conn.Query<Aggregate_Credit>("SELECT * FROM aggregate_credit;");
+            return _conn.Query<CircuitTournaments>("SELECT * FROM aggregate_credit;");
         }
 
         public Tournament AssignAggregateCredit()

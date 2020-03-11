@@ -1,0 +1,30 @@
+﻿@model IEnumerable<CircuitTournaments>
+
+<h2>Aggregate_Credit</h2>
+
+
+
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>TournamentName</th>
+        <th>PrizeMoney</th>
+        <th>NetWinnings</th>
+        
+    </tr>
+
+    @foreach (var credit in Model)
+    {
+        <tr>
+            <td><a href=/Credit/ViewCredit/@credit.Credit_ID>@credit.Credit_ID</a></td>
+            <td>@credit.Credit_ID</td>
+            <td>@credit.TournamentName</td>
+            <td>@credit.PrizeMoney</td>
+            <td>@credit.NetWinnings</td>
+        </tr>
+
+    }
+</table>
+
+

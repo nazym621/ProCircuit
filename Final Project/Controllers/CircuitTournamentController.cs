@@ -25,7 +25,7 @@ namespace ProCircuit.Controllers
 
         public IActionResult UpdateCredit(int id)
         {
-            Aggregate_Credit cred = repo.GetCredit(id);
+            CircuitTournaments cred = repo.GetCredit(id);
 
             repo.UpdateCredit(cred);
 
@@ -37,15 +37,15 @@ namespace ProCircuit.Controllers
             return View(cred);
         }
 
-        public IActionResult UpdateCreditToDatabase(Aggregate_Credit aggregate_Credit)
+        public IActionResult UpdateCreditToDatabase(CircuitTournaments aggregate_Credit)
         {
             repo.UpdateCredit(aggregate_Credit);
 
-            return RedirectToAction("ViewCredit", new { id = aggregate_Credit.Tournament_ID });
+            return RedirectToAction("ViewCredit", new { id = aggregate_Credit.TournamentName });
         }
 
 
-        public IActionResult InsertCreditToDatabase(Aggregate_Credit creditToInsert)
+        public IActionResult InsertCreditToDatabase(CircuitTournaments creditToInsert)
         {
             repo.InsertCredit(creditToInsert);
 

@@ -11,7 +11,7 @@ namespace ProCircuit.Models
         public int Food { get; set; }
         public int Hotel { get; set; }
         public int TotalExpenses { get; set; }
-        public IEnumerable<Aggregate_Credit> AggregateCredit { get; set; }
+        public IEnumerable<CircuitTournaments> AggregateCredit { get; set; }
         public IEnumerable<Tournament> Tournament { get; set; }
     }
 }

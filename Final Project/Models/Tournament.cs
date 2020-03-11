@@ -8,9 +8,8 @@ namespace ProCircuit.Models
         public int Tournament_ID { get; set; }
         public string Name { get; set; }
         public int Total_Prize { get; set; }
-        public IEnumerable<Aggregate_Credit> AggregateCredit { get; set; }
-
-
+        public IEnumerable<CircuitTournaments> AggregateCredit { get; set; }
+        public IEnumerable<Expenses> Expenses { get; set; }
     }
 }
 

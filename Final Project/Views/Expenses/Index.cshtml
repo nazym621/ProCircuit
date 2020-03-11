@@ -13,18 +13,18 @@
         <th>Transportation</th>
         <th>Food</th>
         <th>Hotel</th>
-        <th>Total Expenses</th>
+        
     </tr>
 
     @foreach (var expense in Model)
     {
         <tr>
-            <td><a href=/Expenses/ViewExpenses/@expense.TotalExpenses>@expense.TotalExpenses</a></td>
+            <td><a href=/Expenses/ViewExpenses/@expense.ExpensesID>@expense.ExpensesID</a></td>
             <td>@expense.Flight</td>
             <td>@expense.Transportation</td>
             <td>@expense.Food</td>
             <td>@expense.Hotel</td>
-            <td>@expense.TotalExpenses</td>
+            
         </tr>
 
     }

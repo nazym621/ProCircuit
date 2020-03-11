@@ -1,6 +1,6 @@
-﻿@model Aggregate_Credit
+﻿@model CircuitTournaments
 <h2>Create a New Credit</h2>
-@using (Html.BeginForm("InsertCreditToDatabase", "Credit", "Post"))
+@using (Html.BeginForm("InsertTournamentsToDatabase", "Tournaments", "Post"))
 {
     <input asp-for="Tournament_ID" type="hidden" value="" />
     <label asp-for="Event_ID" class="control-label">Event</label>
@@ -12,11 +12,11 @@
         <select class="form-control" name="Tournament_ID" value="">
             @foreach (var cat in Model.Tournament)
             {
-                <option value="@cat.TournamentID">@cat.TournamentID @cat.Name</option>
+                <option value="@cat.Tournament_ID">@cat.Tournament_ID @cat.Name</option>
             }
         </select>
     </div>
-    <input type="submit" value="Upload Credit" class="btn btn-primary" />
+    <input type="submit" value="Upload Tournaments" class="btn btn-primary" />
 }
 
 

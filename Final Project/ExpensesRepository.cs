@@ -36,14 +36,14 @@ namespace ProCircuit
 
         public void InsertExpenses(Expenses expensesToInsert)
         {
-            _conn.Execute("INSERT INTO expenses (Flight, Transportation, Food, Hotel, TotalExpenses) VALUES (@flight, @transportation, @food, @hotel, @totalexpenses);",
-                new { flight = expensesToInsert.Flight, transportation = expensesToInsert.Transportation, food = expensesToInsert.Food, hotel = expensesToInsert.Hotel, totalexpenses = expensesToInsert.TotalExpenses });
+            _conn.Execute("INSERT INTO expenses (Flight, Transportation, Food, Hotel) VALUES (@flight, @transportation, @food, @hotel);",
+                new { flight = expensesToInsert.Flight, transportation = expensesToInsert.Transportation, food = expensesToInsert.Food, hotel = expensesToInsert.Hotel });
 
         }
 
-        public IEnumerable<Aggregate_Credit> GetAllCredit()
+        public IEnumerable<CircuitTournaments> GetAllCredit()
         {
-            return _conn.Query<Aggregate_Credit>("SELECT * FROM aggregate_credit;");
+            return _conn.Query<CircuitTournaments>("SELECT * FROM aggregate_credit;");
         }
 
         public Expenses AssignAggregateCredit()

@@ -3,6 +3,7 @@
 <h2>Create a New Expenses </h2>
 @using (Html.BeginForm("InsertExpensesToDatabase", "Expenses", "Post"))
 {
+    <input asp-for="ExpensesID" type="hidden" value="" />
     <label asp-for="Flight" class="control-label">Flight</label>
     <input type="number" step="0.01" name="Flight" class="form-control" />
     <label asp-for="Transportation" class="control-label">Transportation</label>
@@ -11,17 +12,8 @@
     <input type="number" step="0.01" name="Food" class="form-control" />
     <label asp-for="Hotel" class="control-label">Hotel</label>
     <input type="number" step="0.01" name="Hotel" class="form-control" />
-    <label asp-for="TotalExpenses" class="control-label">TotalExpenses</label>
-    <input type="number" step="0.01" name="TotalExpenses" class="form-control" />
-    <div class="form-group">
-        <label for="">Select a Tournament</label>
-        <select class="form-control" name="Tournament" value="">
-            @foreach (var cat in Model.Tournament)
-            {
-                <option value="@cat.Tournament">@cat.Tournament @cat.TotalExpenses</option>
-            }
-        </select>
-    </div>
+   
+   
     <input type="submit" value="Create Expenses" class="btn btn-primary" />
 }
 

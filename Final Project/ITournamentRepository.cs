@@ -12,7 +12,7 @@ namespace ProCircuit
         public Tournament GetTournament(string name);
         public void UpdateTournament(Tournament tournament);
         public void InsertTournament(Tournament tournamentToInsert);
-        public IEnumerable<Aggregate_Credit> GetAllCredit();
+        public IEnumerable<CircuitTournaments> GetAllCredit();
         public Tournament AssignAggregateCredit();
 
 
