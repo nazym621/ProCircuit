@@ -9,8 +9,8 @@ namespace ProCircuit
     public interface ICircuitRepository
     {
         public IEnumerable<CircuitTournaments> GetAllTournaments();
-        public CircuitTournaments GetTournament(int id);
-        public void UpdateTournament(CircuitTournaments circuittournaments);
+        public CircuitTournaments GetTournaments(int id);
+        public void UpdateTournaments(CircuitTournaments circuittournaments);
        
       
     }

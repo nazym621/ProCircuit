@@ -24,16 +24,16 @@ namespace ProCircuit.Controllers
             return View(tourney);
         }
 
-        public IActionResult ViewTournament(string name)
+        public IActionResult ViewTournament(int id)
         {
-            var tourney = repo.GetTournament(name);
+            var tourney = repo.GetTournament(id);
 
             return View(tourney);
         }
 
-        public IActionResult UpdateTournament(string name)
+        public IActionResult UpdateTournament(int id)
         {
-            Tournament tourney = repo.GetTournament(name);
+            Tournament tourney = repo.GetTournament(id);
 
             repo.UpdateTournament(tourney);
 
@@ -49,12 +49,12 @@ namespace ProCircuit.Controllers
         {
             repo.UpdateTournament(tournament);
 
-            return RedirectToAction("ViewTournament", new { name = tournament.Name });
+            return RedirectToAction("ViewCircuitTournaments", new { id = tournament.ID });
         }
 
         public IActionResult InsertTournament()
         {
-            var tourney = repo.AssignAggregateCredit();
+            var tourney = repo.AssignCircuitTournaments();
 
             return View(tourney);
         }
@@ -71,5 +71,9 @@ namespace ProCircuit.Controllers
 
 
 
-    }
+
+
+
+
+        }
 }

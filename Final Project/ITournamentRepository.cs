@@ -9,11 +9,12 @@ namespace ProCircuit
     public interface ITournamentRepository
     {
         public IEnumerable<Tournament> GetAllTournaments();
-        public Tournament GetTournament(string name);
+        public Tournament GetTournament(int id);
         public void UpdateTournament(Tournament tournament);
         public void InsertTournament(Tournament tournamentToInsert);
-        public IEnumerable<CircuitTournaments> GetAllCredit();
-        public Tournament AssignAggregateCredit();
+        public IEnumerable<CircuitTournaments> GetTournaments();
+        public Tournament AssignCircuitTournaments();
+
 
 
     }

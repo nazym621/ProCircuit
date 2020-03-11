@@ -1,0 +1,25 @@
+﻿@model CircuitTournaments
+
+<h2>Update @Model.ID</h2>
+
+@using (Html.BeginForm("UpdateTournamentsToDatabase", "Tournaments", "Post"))
+{
+    <input asp-for="ID" type="hidden" value="@Model.ID" />
+
+    <label asp-for="TournamentName" class="control-label">TournamentName</label>
+
+    <input type="text" name="TournamentName" class="form-control" value="@Model.TournamentName" />
+
+    <label asp-for="PrizeMoney" class="control-label">PrizeMoney</label>
+
+    <input type="number" step="0.01" name="PrizeMoney" class="form-control" value="@Model.PrizeMoney" />
+
+    <label asp-for="NetWinnings" class="control-label">NetWinnings</label>
+
+    <input type="number" step="0.01" name="NetWinnings" class="form-control" value="@Model.NetWinnings" />
+
+    <input type="submit" value="Update Circuit" class="btn btn-primary" />
+
+}
+
+

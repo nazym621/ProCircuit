@@ -41,24 +41,21 @@ namespace ProCircuit
 
         }
 
-        public IEnumerable<CircuitTournaments> GetAllCredit()
+        public IEnumerable<CircuitTournaments> GetTournaments()
         {
-            return _conn.Query<CircuitTournaments>("SELECT * FROM aggregate_credit;");
+            return _conn.Query<CircuitTournaments>("SELECT * FROM circuittournaments;");
         }
 
-        public Expenses AssignAggregateCredit()
+        public Expenses AssignCircuitTournaments()
         {
-            var creditList = GetAllCredit();
+            var circuitList = GetTournaments();
             var cost = new Expenses();
-            cost.AggregateCredit = creditList;
+            cost.CircuitTournaments = circuitList;
 
             return cost;
         }
 
-        public IEnumerable<Tournament> GetTournament()
-        {
-            return _conn.Query<Tournament>("SELECT * FROM TOURNAMENTS;");
-        }
+       
 
     }
 }

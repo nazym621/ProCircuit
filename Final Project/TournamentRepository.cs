@@ -22,37 +22,40 @@ namespace ProCircuit
             return _conn.Query<Tournament>("SELECT * FROM TOURNAMENT;");
         }
 
-        public Tournament GetTournament(string name)
+        public Tournament GetTournament(int id)
         {
-            return (Tournament)_conn.QuerySingle<Tournament>("SELECT * FROM Tournament WHERE TournamentName = @name",
-                new { name = name });
+            return (Tournament)_conn.QuerySingle<Tournament>("SELECT * FROM Tournament WHERE ID = @id",
+                new { id = id });
         }
 
         public void UpdateTournament(Tournament tournament)
         {
-            _conn.Execute("UPDATE tournament SET Name = @name, Total_Prize = @totalprize WHERE TournamentID = @id",
-                new { name = tournament.Name, money = tournament.Total_Prize, id = tournament.Tournament_ID });
+            _conn.Execute("UPDATE tournament SET Name = @name, Total_Prize = @totalprize WHERE ID = @id",
+                new { name = tournament.Name, money = tournament.Total_Prize, id = tournament.ID });
         }
 
         public void InsertTournament(Tournament tournamentToInsert)
         {
-            _conn.Execute("INSERT INTO Tournament (ID, Name, Total_Prize) VALUES (@id, @name, @totalprize);",
-                new { id = tournamentToInsert.Tournament_ID, name = tournamentToInsert.Name, totalprize = tournamentToInsert.Total_Prize, });
+            _conn.Execute("INSERT INTO tournament (Name, Total_Prize) VALUES (@name, @totalprize);",
+                new { name = tournamentToInsert.Name, totalprize = tournamentToInsert.Total_Prize });
         }
 
-        public IEnumerable<CircuitTournaments> GetAllCredit()
+       
+
+        public IEnumerable<CircuitTournaments> GetTournaments()
         {
-            return _conn.Query<CircuitTournaments>("SELECT * FROM aggregate_credit;");
+            return _conn.Query<CircuitTournaments>("SELECT * FROM circuittournaments;");
         }
 
-        public Tournament AssignAggregateCredit()
+        public Tournament AssignCircuitTournaments()
         {
-            var creditList = GetAllCredit();
-            var tourney = new Tournament();
-            tourney.AggregateCredit = creditList;
+            var circuitList = GetTournaments();
+            var cost = new Tournament();
+            cost.CircuitTournaments = circuitList;
 
-            return tourney;
+            return cost;
         }
+
 
 
 

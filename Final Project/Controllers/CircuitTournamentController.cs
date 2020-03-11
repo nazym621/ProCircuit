@@ -7,50 +7,52 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ProCircuit.Controllers
 {
-    public class CreditController : Controller
+    public class CircuitTournamentController : Controller
     {
         private readonly ICircuitRepository repo;
 
-        public CreditController(ICircuitRepository repo)
+        public CircuitTournamentController(ICircuitRepository repo)
         {
             this.repo = repo;
         }
 
         public IActionResult Index()
         {
-            var credit = repo.GetAllCredit();
+            var tourney = repo.GetAllTournaments();
 
-            return View(credit);
+            return View(tourney);
         }
 
-        public IActionResult UpdateCredit(int id)
+        public IActionResult ViewCircuitTournaments(int id)
         {
-            CircuitTournaments cred = repo.GetCredit(id);
+            var tour = repo.GetTournaments(id);
 
-            repo.UpdateCredit(cred);
+            return View(tour);
+        }
 
-            if (cred == null)
+            public IActionResult UpdateTournaments(int id)
+        {
+            CircuitTournaments tour = repo.GetTournaments(id);
+
+            repo.UpdateTournaments(tour);
+
+            if (tour == null)
             {
-                return View("CreditNotFound");
+                return View("TournamentsNotFound");
             }
 
-            return View(cred);
+            return View(tour);
         }
 
-        public IActionResult UpdateCreditToDatabase(CircuitTournaments aggregate_Credit)
+        public IActionResult UpdateTournamentsToDatabase(CircuitTournaments circuittournaments)
         {
-            repo.UpdateCredit(aggregate_Credit);
+            repo.UpdateTournaments(circuittournaments);
 
-            return RedirectToAction("ViewCredit", new { id = aggregate_Credit.TournamentName });
+            return RedirectToAction("ViewTournaments", new { id = circuittournaments.ID });
         }
 
 
-        public IActionResult InsertCreditToDatabase(CircuitTournaments creditToInsert)
-        {
-            repo.InsertCredit(creditToInsert);
-
-            return RedirectToAction("Index");
-        }
+        
 
         
 

@@ -1,10 +1,10 @@
 ﻿@model Tournament
 
-<h2>UpdateTournament @Model.Name</h2>
+<h2>UpdateTournament @Model.ID</h2>
 
 @using (Html.BeginForm("UpdateTournamentToDatabase", "Tournament", "Post"))
 {
-    <input asp-for="Tournament_ID" type="hidden" value="@Model.Tournament_ID" />
+    <input asp-for="ID" type="hidden" value="@Model.ID" />
 
     <label asp-for="Name" class="control-label">Name</label>
 
@@ -17,5 +17,9 @@
     <input type="submit" value="Update Tournament" class="btn btn-primary" />
 
 }
+
+<div style="display: block">
+    <a href="/Tournament/UpdateTournament/@Model.ID">Update this Tournament</a>
+</div>
 
 

@@ -12,8 +12,8 @@ namespace ProCircuit
         public Expenses GetExpenses(int totalexpenses);
         public void UpdateExpenses(Expenses expenses);
         public void InsertExpenses(Expenses expensesToInsert);
-        public IEnumerable<CircuitTournaments> GetAllCredit();
-        public Expenses AssignAggregateCredit();
-        public IEnumerable<Tournament> GetTournament();
+        public IEnumerable<CircuitTournaments> GetTournaments();
+        public Expenses AssignCircuitTournaments();
+        
     }
 }

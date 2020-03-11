@@ -8,10 +8,11 @@ namespace ProCircuit.Models
 {
     public class CircuitTournaments
     {
-        public int Credit_ID { get; set; }
+        public int ID { get; set; }
         public int TournamentName { get; set; }
         public int PrizeMoney { get; set; }
         public int NetWinnings { get; set; }
+        
 
     }
 }

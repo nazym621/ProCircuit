@@ -1,0 +1,31 @@
+﻿@model IEnumerable<CircuitTournaments>
+
+<h2>CircuitTournaments</h2>
+
+<div style="display: block">
+    <a href="/CircuitTournaments/InsertCircuitTournaments/">Create a New CircuitTournaments</a>
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>TournamentName</th>
+        <th>PrizeMoney</th>
+        <th>NetWinnings</th>
+        
+    </tr>
+
+    @foreach (var circuit in Model)
+    {
+        <tr>
+            <td><a href=/CircuitTournaments/ViewCircuitTournaments/@circuit.ID>@circuit.ID</a></td>
+            <td>@circuit.TournamentName</td>
+            <td>@circuit.PrizeMoney</td>
+            <td>@circuit.NetWinnings</td>
+        </tr>
+
+    }
+</table>
+
+
