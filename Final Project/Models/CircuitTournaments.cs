@@ -12,7 +12,9 @@ namespace ProCircuit.Models
         public int TournamentName { get; set; }
         public int PrizeMoney { get; set; }
         public int NetWinnings { get; set; }
-        
+        public IEnumerable<CircuitTournaments> CircuitTournament { get; set; }
+
+
 
     }
 }

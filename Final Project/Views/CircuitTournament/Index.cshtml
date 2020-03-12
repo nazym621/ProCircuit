@@ -1,9 +1,21 @@
-﻿@model IEnumerable<CircuitTournaments>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            color: white;
+        }
+    </style>
+</head>
+
+
+
+@model IEnumerable<CircuitTournaments>
 
 <h2>CircuitTournaments</h2>
 
 <div style="display: block">
-    <a href="/CircuitTournaments/InsertCircuitTournaments/">Create a New CircuitTournaments</a>
+    <a href="/CircuitTournament/InsertCircuitTournament/">Create a New CircuitTournaments</a>
 </div>
 
 
@@ -13,7 +25,7 @@
         <th>TournamentName</th>
         <th>PrizeMoney</th>
         <th>NetWinnings</th>
-        
+
     </tr>
 
     @foreach (var circuit in Model)

@@ -34,16 +34,26 @@ namespace ProCircuit
                 new { tournament = circuitTournaments.TournamentName, prizemoney = circuitTournaments.PrizeMoney, winnings = circuitTournaments.NetWinnings });
         }
 
+        public void InsertCircuitTournament(CircuitTournaments circuittournamentsToInsert)
+        {
+            _conn.Execute("INSERT INTO circuittournament (tournamentname, prizemoney, netwinnings) VALUES (@tournamentname, @prizemoney, @netwinnings);",
+                new { tournament = circuittournamentsToInsert.TournamentName, prizemoney = circuittournamentsToInsert.PrizeMoney, winnings = circuittournamentsToInsert.NetWinnings });
+        }
+
+        public IEnumerable<CircuitTournaments> GetCircuitTournaments()
+        {
+            return _conn.Query<CircuitTournaments>("SELECT * FROM circuittournaments;");
+        }
 
 
-       
+        public CircuitTournaments AssignCircuitTournament()
+        {
+            var circuitTournamentList = GetCircuitTournaments();
+            var circuittour = new CircuitTournaments();
+            circuittour.CircuitTournament = circuitTournamentList;
 
-        
+            return circuittour;
 
-       
-
-        
-
-        
+        }
     }
 }

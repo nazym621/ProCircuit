@@ -11,7 +11,10 @@ namespace ProCircuit
         public IEnumerable<CircuitTournaments> GetAllTournaments();
         public CircuitTournaments GetTournaments(int id);
         public void UpdateTournaments(CircuitTournaments circuittournaments);
-       
-      
+        public void InsertCircuitTournament(CircuitTournaments circuittournamentToInsert);
+        
+        public CircuitTournaments AssignCircuitTournament();
+
+
     }
 }

@@ -1,4 +1,15 @@
-﻿@model IEnumerable<Expenses>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            color: white;
+        }
+    </style>
+</head>
+
+
+@model IEnumerable<Expenses>
 
 <h2>Expenses</h2>
 
@@ -13,7 +24,7 @@
         <th>Transportation</th>
         <th>Food</th>
         <th>Hotel</th>
-        
+
     </tr>
 
     @foreach (var expense in Model)
@@ -24,7 +35,7 @@
             <td>@expense.Transportation</td>
             <td>@expense.Food</td>
             <td>@expense.Hotel</td>
-            
+
         </tr>
 
     }

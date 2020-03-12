@@ -1,12 +1,24 @@
-﻿@model IEnumerable<Tournament>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            color: white;
+        }
+    </style>
+</head>
+
+@model IEnumerable<Tournament>
 
 <h2>Tournament</h2>
+
 
 <div style="display: block">
     <a href="/Tournament/InsertTournament/">Create a New Tournament</a>
 </div>
 
 <table class="table">
+
     <tr>
         <th>ID</th>
         <th>Name</th>

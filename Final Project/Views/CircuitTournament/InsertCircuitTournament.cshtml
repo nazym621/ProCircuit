@@ -1,0 +1,16 @@
+﻿@model CircuitTournaments
+<h2>Create a New CircuitTournament</h2>
+@using (Html.BeginForm("InsertCircuitTournamentsToDatabase", "CircuitTournaments", "Post"))
+{
+    <input asp-for="ID" type="hidden" value="" />
+    <label asp-for="TournamentName" class="control-label">TournamentName</label>
+    <input type="text" name="TournamentName" class="form-control" value="" />
+    <label asp-for="PrizeMoney" class="control-label">PrizeMoney</label>
+    <input type="number" step="0.01" name="PrizeMoney" class="form-control" />
+    <label asp-for="NetWinnings" class="control-label">NetWinnings</label>
+    <input type="number" step="0.01" name="NetWinnings" class="form-control" />
+   
+    <input type="submit" value="Create CircuitTournaments" class="btn btn-primary" />
+}
+
+
