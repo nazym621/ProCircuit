@@ -14,6 +14,8 @@ namespace ProCircuit
         public void InsertExpenses(Expenses expensesToInsert);
         public IEnumerable<CircuitTournaments> GetTournaments();
         public Expenses AssignCircuitTournaments();
-        
+        public void DeleteExpenses(Expenses expenses);
+
+
     }
 }

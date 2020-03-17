@@ -66,6 +66,14 @@ namespace ProCircuit.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult DeleteProduct(Expenses expenses)
+        {
+            repo.DeleteExpenses(expenses);
+
+            return RedirectToAction("Index");
+        }
+
+
 
 
 

@@ -55,7 +55,22 @@ namespace ProCircuit
             return cost;
         }
 
-       
+        public void DeleteExpenses(Expenses expenses)
+        {
+            _conn.Execute("DELETE FROM Flight WHERE ID = @id;",
+                                       new { id = expenses.ExpensesID });
+            _conn.Execute("DELETE FROM Transportation WHERE ID = @id;",
+                                       new { id = expenses.ExpensesID });
+            _conn.Execute("DELETE FROM Food WHERE ID = @id;",
+                                       new { id = expenses.ExpensesID });
+            _conn.Execute("DELETE FROM Hotel WHERE ID = @id;",
+                                      new { id = expenses.ExpensesID });
+            _conn.Execute("DELETE FROM TotalExpenses WHERE ID = @id;",
+                                      new { id = expenses.ExpensesID });
+        }
+
+
+
 
     }
 }
